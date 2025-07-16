@@ -15,3 +15,17 @@ The goal of Terraform is to reconcile the current state with the desired state, 
 matches the configuration defined in the Terraform files.
 This often involves creating new resources, updating existing ones, or destroying resources that are no longer needed
 */
+
+/*
+Overview of Provider Versioning:
+In the provided Terraform configuration, the `required_providers` block specifies the GitHub provider with
+a version constraint of `~> 5.0`. This means that Terraform will use version 5.0 or any later version that is compatible with 5.x, but not version 6.0 or higher.
+This versioning strategy allows for minor updates and bug fixes while avoiding
+breaking changes that might occur in major version updates.
+The provider block then configures the GitHub provider with an authentication token, which is necessary for
+interacting with the GitHub API to create and manage resources like repositories.
+This configuration ensures that the desired state of the GitHub repository is defined and can be managed through
+Terraform, allowing for consistent and repeatable infrastructure management.
+# This is a Terraform configuration file for creating a GitHub repository.
+
+*/
