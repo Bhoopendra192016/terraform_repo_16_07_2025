@@ -28,4 +28,26 @@ This configuration ensures that the desired state of the GitHub repository is de
 Terraform, allowing for consistent and repeatable infrastructure management.
 # This is a Terraform configuration file for creating a GitHub repository.
 
+There are multiple ways for specifing the version of the provider in Terraform.
+>=1.0.0     This means that Terraform will use version 1.0.0 or any later version, including
+            major version updates (e.g., 2.0.0, 3.0.0, etc.).
+~> 1.0.0    This means that Terraform will use version 1.0.0 or any later version that is compatible with 1.x,
+            but not version 2.0.0 or higher.
+            It allows for minor updates and bug fixes while avoiding breaking changes that might occur in major version updates.
+<= 1.0.0    This means that Terraform will use version 1.0.0 or any earlier version, including major version updates (e.g., 0.9.0, 0.8.0, etc.).
+< 1.0.0   This means that Terraform will use any version earlier than 1.0.0, including versions like 0.9.0, 0.8.0, etc.
+            It does not allow for any version 1.x or later. This is useful when you want to ensure that you are using a specific version of a provider
+            that is known to work with your configuration, especially if you are using features that may not be available in later versions.
+            This is useful when you want to ensure that you are using a specific version of a provider that is known to work with your configuration,
+            especially if you are using features that may not be available in later versions. It is often used in conjunction with the `required_providers` 
+            block to specify the provider and its version constraints.
+>=1.0.0, <1.30.0
+            This means that Terraform will use any version starting from 1.0.0 up to, but not including, 1.30.0.
+            It allows for a range of versions to be used, ensuring compatibility with the features and functionality
+            available in those versions while avoiding potential breaking changes in later major versions.
+            This is useful when you want to ensure that your configuration works with a specific range of provider versions,
+            especially if you are using features that may change or be deprecated in future releases.
+            It is often used in conjunction with the `required_providers` block to specify the provider
+            and its version constraints.
+
 */

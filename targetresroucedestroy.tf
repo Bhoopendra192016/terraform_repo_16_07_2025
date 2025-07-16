@@ -1,1 +1,1 @@
-terraform destroy -target=github_repository.terraform_repo_16_07_2025 #-auto-approve
+#terraform destroy -target=github_repository.terraform_repo_16_07_2025 #-auto-approve
