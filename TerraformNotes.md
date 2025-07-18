@@ -50,4 +50,24 @@ There are multiple ways for specifing the version of the provider in Terraform.
             It is often used in conjunction with the `required_providers` block to specify the provider
             and its version constraints.
 
+Terraform refresh:-
+    terraform refresh
+Updates the Terraform state file with the real infrastructure values from the cloud provider — without changing the actual infrastructure.
+Why is this useful?
+🔹 Detect drift between Terraform state and real-world infrastructure.
+Imagine someone manually changes a tag or deletes an EC2 instance from AWS — terraform refresh will:
+
+Query the actual infrastructure
+Update the .tfstate file to reflect what's currently deployed
+Show you any mismatches
+
+💥 Use Cases
+Scenario	                                            Benefit of refresh
+Someone manually edited cloud resources	        Detect that your state is out of sync.
+You want to compare a fresh plan	            Ensure terraform plan shows the true delta.
+Output value seems wrong	                    A refresh may correct outdated or stale values.
+
+
+
+
 */
